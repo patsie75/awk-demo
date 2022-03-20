@@ -1,0 +1,83 @@
+##
+## dedocahedron mesh
+##
+
+## colors
+var red 1
+var green 2
+var yellow 3
+var blue 4
+var magenta 5
+var cyan 6
+var white 7
+
+#  var phi = (1 + Math.sqrt(5)) / 2;
+#  var a = 0.5;
+#  var b = 0.5 * 1 / phi;
+#  var c = 0.5 * (2 - phi);
+
+var phi  1.618034
+var   a 20.000000
+var   b 12.360680
+var   c  7.639320
+
+## vertices
+vert  c  0  a
+vert -c  0  a
+vert -b  b  b
+vert  0  a  c
+vert  b  b  b
+vert  b -b  b
+vert  0 -a  c
+vert -b -b  b
+vert  c  0 -a
+vert -c  0 -a
+vert -b -b -b
+vert  0 -a -c
+vert  b -b -b
+vert  b  b -b
+vert  0  a -c
+vert -b  b -b
+vert  a  c  0
+vert -a  c  0
+vert -a -c  0
+vert  a -c  0
+
+
+## triangles
+tri  5  4  1 red
+tri  4  2  1 red
+tri  4  3  2 red
+tri  8  7  2 green
+tri  7  1  2 green
+tri  7  6  1 green
+tri 13 12  9 blue
+tri 12 10  9 blue
+tri 12 11 10 blue
+tri 16 15 10 magenta
+tri 15  9 10 magenta
+tri 15 14  9 magenta
+tri 15  4 14 yellow
+tri  4 17 14 yellow
+tri  4  5 17 yellow
+tri  4 15  3 white
+tri 15 18  3 white
+tri 15 16 18 white
+tri 12  7 11 red
+tri  7 19 11 red
+tri  7  8 19 red
+tri  7 12  6 green
+tri 12 20  6 green
+tri 12 13 20 green
+tri  5  1 17 blue
+tri  1 20 17 blue
+tri  1  6 20 blue
+tri 13  9 20 magenta
+tri  9 17 20 magenta
+tri  9 14 17 magenta
+tri 16 10 18 yellow
+tri 10 19 18 yellow
+tri 10 11 19 yellow
+tri  8  2 19 white
+tri  2 18 19 white
+tri  2  3 18 white

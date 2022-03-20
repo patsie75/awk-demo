@@ -1,0 +1,43 @@
+##
+## CUBE MESH
+##
+
+var i 15
+var red 1
+var blue 4
+var white 7
+
+vert -i -i -i
+vert -i  i -i
+vert  i  i -i
+vert  i -i -i
+
+vert -i -i  i
+vert -i  i  i
+vert  i  i  i
+vert  i -i  i
+
+# north
+tri 1 2 3 red
+tri 1 3 4 red
+
+# east
+tri 4 3 7 blue
+tri 4 7 8 blue
+
+# south
+tri 8 7 6 red
+tri 8 6 5 red
+
+# west
+tri 5 6 2 blue
+tri 5 2 1 blue
+
+# top
+tri 2 6 7
+tri 2 7 3
+
+# bottom
+tri 5 1 4
+tri 5 4 8
+

@@ -1,0 +1,25 @@
+##
+## pyramid
+##
+
+# variables
+var red 1
+var blue 4
+var white 7
+var a 15
+
+# vertices
+vert -a -a  a 
+vert  a -a  a
+vert  a  a  a
+vert -a  a  a
+vert  0  0 -a
+
+# triangles
+tri 4 1 2 white
+tri 4 2 3 white
+
+tri 1 5 2 red
+tri 2 5 3 blue
+tri 3 5 4 red
+tri 4 5 1 blue
