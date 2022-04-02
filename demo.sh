@@ -27,6 +27,12 @@ opts=( [gawk]="-pdemo.prof" )
 declare -A incs
 incs=( [gawk]="-flib/hex.gawk" [gawk500]="-flib/hex.gawk" [gawk511]="-flib/hex.gawk" [mawk]="-flib/hex.awk" [mawk133]="-flib/hex.awk" [nawk]="-flib/hex.awk" [awk]="-flib/hex.awk" [bbawk]="-flib/hex.awk" )
 
+case $(uname) in
+  Linux) inc_timex="-flib/time-linux.awk" ;;
+  Darwin) inc_timex="-flib/time-darwin.awk" ;;
+esac
+echo "using $inc_timex as the timer"
+
 ## find all effects to include
 effects=( effects/*.awk )
 if [[ ${#effects[@]} -eq 0 ]]; then
@@ -39,4 +45,4 @@ fi
 printf "\033[?25l\033[?1049h"
 
 # start program
-LC_NUMERIC=C "$awkbin" ${opts[$awkshort]} -v debug="${debug:-0}" -v fps="${fps:-30}" -v mp3player="${mp3bin:-false}" "${effects[@]/#/-f}" ${incs[$awkshort]} -f lib/xpm3.awk -f lib/glib.awk -f demo.awk
+LC_NUMERIC=C "$awkbin" ${opts[$awkshort]} -v debug="${debug:-0}" -v fps="${fps:-30}" -v mp3player="${mp3bin:-false}" "${effects[@]/#/-f}" $inc_timex ${incs[$awkshort]} -f lib/xpm3.awk -f lib/glib.awk -f demo.awk
