@@ -21,7 +21,7 @@ Dependencies:
   - A terminal with good UTF-8 and true-color/24-bit ANSI support
     - Gnome Terminal (some other LibVTE based terminals might also work, like Termit)
     - xterm
-    - (!) mlterm ran into an issue (https://github.com/arakiken/mlterm/issues/39)
+    - mlterm should have a bugfix on the way (https://github.com/arakiken/mlterm/issues/39)
   - A recent version of a modern awk (tested with):
     - mawk (1.3.3 and 1.3.4)
     - gawk (all versions from 4.1.4 till 5.1.1)
