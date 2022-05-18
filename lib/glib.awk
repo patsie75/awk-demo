@@ -10,13 +10,6 @@ BEGIN {
 
 function clamp(val, a, b) { return (val<a) ? a : (val>b) ? b : val }
 
-## get timestamp with one-hundreth of a second precision
-function timex() {
-  getline <"/proc/uptime"
-  close("/proc/uptime")
-  return $1
-}
-
 function clear(dst) { fill(dst, "0;0;0") }
 
 function blend(a, b, alpha1, alpha2,    fg, bg, r, y,z) {
