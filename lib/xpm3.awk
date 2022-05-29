@@ -9,6 +9,8 @@ BEGIN {
       pallet[$1] = sprintf("%d;%d;%d", arr[1], arr[2], arr[3])
     }
   close(cmd)
+
+  hexdigits = "0123456789abcdef"
 }
 
 function xpm3load(fname, dst,    a, width, height, numcols, charsppx, color, c, data, i, j, line, pix) {
@@ -77,4 +79,21 @@ function xpm3load(fname, dst,    a, width, height, numcols, charsppx, color, c, 
   dst["height"] = height
 
   return 1
+}
+
+# Convert string of hex digits (optionally prefixed with "0x") to number.
+function hex(str,    n, i, digit) {
+  str = tolower(str)
+  if (substr(str, 1, 1) == "-")
+    return -hex(substr(str, 2))
+  if (substr(str, 1, 2) == "0x")
+    str = substr(str, 3)
+  n = 0
+  for (i=1; i<=length(str); i++) {
+    digit = index(hexdigits, substr(str, i, 1))
+    if (digit == 0)
+      return n
+    n = n*16 + digit-1
+  }
+  return n
 }
