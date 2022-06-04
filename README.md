@@ -26,6 +26,7 @@ Dependencies:
     - mawk (1.3.3 and 1.3.4)
     - gawk (all versions from 4.1.4 till 5.1.1)
     - nawk (20121220)
+    - goawk (v1.18.0)
     - (!) busybox awk technically works, but the performance I got was horrible
   - If you want music to accompany the visual effects, one of the following:
     - ffplay (part of ffmpeg)
